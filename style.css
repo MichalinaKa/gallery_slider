@@ -19,6 +19,7 @@
   width: 100%;
   margin: 0;
   padding: 0;
+  height: 100%;
   opacity: 0;
   -webkit-transition: opacity 1.2s;
   transition: opacity 1.2s;
@@ -30,6 +31,8 @@
 
 .slides figure img {
   display: block;
+  object-fit: cover;
+  height: 100%;
 }
 
 .slides .show {
@@ -40,13 +43,13 @@
 .slides figcaption {
   position: absolute;
   font-family: sans-serif;
-  font-size: .8em;
-  bottom: .75em;
-  right: .35em;
-  padding: .25em;
+  font-size: 0.8em;
+  bottom: 0.75em;
+  right: 0.35em;
+  padding: 0.25em;
   color: #fff;
   background: #000;
-  background: rgba(0, 0, 0, .25);
+  background: rgba(0, 0, 0, 0.25);
   border-radius: 2px;
 }
 
@@ -54,23 +57,26 @@
   color: #fff;
 }
 
-.next, .prev {
+.next,
+.prev {
   color: #fff;
   position: absolute;
   background: #000;
-  background: rgba(0, 0, 0, .6);
+  background: rgba(0, 0, 0, 0.6);
   top: 50%;
   z-index: 4;
   font-size: 2em;
   margin-top: -1.2em;
-  opacity: .5;
+  opacity: 0.5;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
 
-.next:hover, .prev:hover, nav button:hover {
+.next:hover,
+.prev:hover,
+nav button:hover {
   cursor: pointer;
   opacity: 1;
 }
@@ -90,6 +96,7 @@
 }
 
 nav {
+  /* z-index: 100; */
   text-align: center;
   line-height: 25px;
   position: relative;
@@ -108,12 +115,12 @@ nav ul {
   padding: 0;
 }
 
-nav ul>li {
+nav ul > li {
   display: inline-block;
   list-style-type: none;
 }
 
-nav ul>li button {
+nav ul > li button {
   width: 15px;
   height: 20px;
   line-height: 25px;
@@ -132,7 +139,7 @@ nav button.play {
 }
 
 nav button.play:before {
-  content: '\25B6';
+  content: "\25B6";
   position: absolute;
   top: 0;
   left: 0;
@@ -140,17 +147,17 @@ nav button.play:before {
 }
 
 nav button.play.on:before {
-  content: '\23f8';
+  content: "\23f8";
 }
 
-nav ul>li button:before {
-  content: '\2022';
+nav ul > li button:before {
+  content: "\2022";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
 }
 
-nav ul>li button.selected {
+nav ul > li button.selected {
   opacity: 1;
 }

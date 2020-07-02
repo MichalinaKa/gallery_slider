@@ -1,60 +1,54 @@
-/* girls.js - Interaktywna Galeria
- * Plik gallery.js
- * Tutaj będziemy dodawać nasz kod.
- */
-
-// let slide5 = document.getElementById("slide5").classList.add("show");
 let currentNumber = 1;
-function showSlide1() {
+function selectPin(newNumber) {
+  document.querySelector(".selected").classList.add("selected");
+  document.querySelector("#pin" + currentNumber).classList.add("selected");
+}
+function showSlide(newNumber) {
   document.querySelector(".show").classList.remove("show");
-  document.querySelector("#slide1").classList.add("show");
+  document.querySelector("#slide" + newNumber).classList.add("show");
+  currentNumber = newNumber;
+  selectPin(newNumber);
+}
+
+function showSlide1() {
+  showSlide(1);
 }
 document.querySelector("#pin1").addEventListener("click", showSlide1);
 
 function showSlide2() {
-  document.querySelector(".show").classList.remove("show");
-  document.querySelector("#slide2").classList.add("show");
+  showSlide(2);
 }
 document.querySelector("#pin2").addEventListener("click", showSlide2);
 
-// let slide1 = document.getElementById("slide1").classList.add("show");
-
 function showSlide3() {
-  document.querySelector(".show").classList.remove("show");
-  document.querySelector("#slide3").classList.add("show");
+  showSlide(3);
 }
 document.querySelector("#pin3").addEventListener("click", showSlide3);
 
 function showSlide4() {
-  document.querySelector(".show").classList.remove("show");
-  document.querySelector("#slide4").classList.add("show");
+  showSlide(4);
 }
 document.querySelector("#pin4").addEventListener("click", showSlide4);
 
 function showSlide5() {
-  document.querySelector(".show").classList.remove("show");
-  document.querySelector("#slide5").classList.add("show");
+  showSlide(5);
 }
 document.querySelector("#pin5").addEventListener("click", showSlide5);
 
 function showNextSlide() {
-  document.querySelector(".show").classList.remove("show");
   let newNumber = currentNumber + 1;
   if (newNumber > 5) {
     newNumber = 1;
   }
-  document.querySelector("#slide" + newNumber).classList.add("show");
-  currentNumber = newNumber;
+  showSlide(newNumber);
 }
 document.querySelector("#next").addEventListener("click", showNextSlide);
 
 function showPreviousSlide() {
-  document.querySelector(".show").classList.remove("show");
   let newNumber = currentNumber - 1;
   if (newNumber < 1) {
     newNumber = 5;
   }
-  document.querySelector("#slide" + newNumber).classList.add("show");
-  currentNumber = newNumber;
+  showSlide(newNumber);
 }
 document.querySelector("#prev").addEventListener("click", showPreviousSlide);
