@@ -10,34 +10,40 @@ function showSlide(newNumber) {
   selectPin(newNumber);
 }
 
-function showSlide1() {
-  showSlide(1);
-}
-document.querySelector("#pin1").addEventListener("click", showSlide1);
+// function showSlide1() {
+//   showSlide(1);
+// }
+// document.querySelector("#pin1").addEventListener("click", showSlide1);
 
-function showSlide2() {
-  showSlide(2);
-}
-document.querySelector("#pin2").addEventListener("click", showSlide2);
+// function showSlide2() {
+//   showSlide(2);
+// }
+// document.querySelector("#pin2").addEventListener("click", showSlide2);
 
-function showSlide3() {
-  showSlide(3);
-}
-document.querySelector("#pin3").addEventListener("click", showSlide3);
+// function showSlide3() {
+//   showSlide(3);
+// }
+// document.querySelector("#pin3").addEventListener("click", showSlide3);
 
-function showSlide4() {
-  showSlide(4);
-}
-document.querySelector("#pin4").addEventListener("click", showSlide4);
+// function showSlide4() {
+//   showSlide(4);
+// }
+// document.querySelector("#pin4").addEventListener("click", showSlide4);
 
-function showSlide5() {
-  showSlide(5);
+// function showSlide5() {
+//   showSlide(5);
+// }
+// document.querySelector("#pin5").addEventListener("click", showSlide5);
+
+for (let i = 1; i <= 11; i++) {
+  document.querySelector("#pin" + i).addEventListener("click", function () {
+    showSlide(i);
+  });
 }
-document.querySelector("#pin5").addEventListener("click", showSlide5);
 
 function showNextSlide() {
   let newNumber = currentNumber + 1;
-  if (newNumber > 5) {
+  if (newNumber > 11) {
     newNumber = 1;
   }
   showSlide(newNumber);
@@ -47,7 +53,7 @@ document.querySelector("#next").addEventListener("click", showNextSlide);
 function showPreviousSlide() {
   let newNumber = currentNumber - 1;
   if (newNumber < 1) {
-    newNumber = 5;
+    newNumber = 11;
   }
   showSlide(newNumber);
 }

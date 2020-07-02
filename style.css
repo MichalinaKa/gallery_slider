@@ -1,6 +1,12 @@
+body {
+  background-color: black;
+  height: 100vh;
+  margin: 0 auto;
+}
 .wrapper {
   background: #000;
-  max-width: 1000px;
+  max-width: 1200px;
+  max-height: 100vh;
   margin: 0 auto;
 }
 
